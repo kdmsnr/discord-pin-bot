@@ -1,7 +1,5 @@
 require 'discordrb'
 require 'sinatra'
-require 'dotenv'
-Dotenv.load
 
 bot_token = ENV['DISCORD_BOT_TOKEN']
 

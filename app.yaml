@@ -2,6 +2,9 @@ runtime: ruby32
 env: standard
 entrypoint: bundle exec ruby pin_bot.rb
 
+includes:
+  - env.yaml
+
 instance_class: F1
 
 automatic_scaling:
