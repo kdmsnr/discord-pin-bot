@@ -2,9 +2,6 @@ runtime: ruby32
 env: standard
 entrypoint: bundle exec ruby pin_bot.rb
 
-runtime_config:
-    operating_system: "ubuntu22"
-
 instance_class: F1
 
 automatic_scaling:

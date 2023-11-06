@@ -1,6 +1,8 @@
 require 'discordrb'
+require 'dotenv'
+Dotenv.load
 
-bot_token = 'YOUR TOKEN'
+bot_token = ENV['DISCORD_BOT_TOKEN']
 
 bot = Discordrb::Bot.new token: bot_token
 
