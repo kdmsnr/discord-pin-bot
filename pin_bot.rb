@@ -19,14 +19,16 @@ bot.reaction_remove do |event|
   end
 end
 
+# Botを起動する
+bot.run
+
 # ウォームアップリクエストを処理するエンドポイント
-get '/_ah/warmup' do
-  'Warmup successful'
+class MyWebApp < Sinatra::Base
+  get '/_ah/warmup' do
+    'Warmup successful'
+  end
 end
 
-# Botを起動する
-# bot.run
-Thread.new { bot.run }
-
 # Sinatraアプリを起動する
-run Sinatra::Application
+Thread.new { MyWebApp.run! }
+
