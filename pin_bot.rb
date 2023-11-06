@@ -1,4 +1,5 @@
 require 'discordrb'
+require 'sinatra'
 require 'dotenv'
 Dotenv.load
 
@@ -20,4 +21,14 @@ bot.reaction_remove do |event|
   end
 end
 
-bot.run
+# ウォームアップリクエストを処理するエンドポイント
+get '/_ah/warmup' do
+  'Warmup successful'
+end
+
+# Botを起動する
+# bot.run
+Thread.new { bot.run }
+
+# Sinatraアプリを起動する
+run Sinatra::Application
